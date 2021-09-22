@@ -1,6 +1,11 @@
+import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
+import { fetchTweets } from './fetch';
 
-export const onPubSubCheckTweet = functions.pubsub.schedule('* * * * *').onRun(async () => {
-  console.log('hello onPubSubCheckTweet');
-  return Promise.resolve(0);
+const adminApp = admin.initializeApp();
+adminApp.firestore().settings({ ignoreUndefinedProperties: true });
+
+export const onPubSubFetchTweet = functions.pubsub.schedule('* * * * *').onRun(async () => {
+  await fetchTweets(adminApp);
+  return 0;
 });
