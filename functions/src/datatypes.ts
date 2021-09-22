@@ -10,4 +10,5 @@ export interface Tweet {
 
 export interface FS_Tweet {
   tweets: Tweet[];
+  needPing: boolean;
 }

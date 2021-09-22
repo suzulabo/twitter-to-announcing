@@ -5,7 +5,7 @@ import { fetchTweets } from './fetch';
 const adminApp = admin.initializeApp();
 adminApp.firestore().settings({ ignoreUndefinedProperties: true });
 
-export const onPubSubFetchTweet = functions.pubsub.schedule('* * * * *').onRun(async () => {
+export const onPubSubFetchTweets = functions.pubsub.schedule('*/5+1 * * * *').onRun(async () => {
   await fetchTweets(adminApp);
   return 0;
 });
