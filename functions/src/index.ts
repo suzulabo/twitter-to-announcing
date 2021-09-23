@@ -1,5 +1,6 @@
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
+import { appConfig } from './config';
 import { fetchTweets } from './fetch';
 import { httpsGetPosts } from './posts';
 
@@ -24,7 +25,7 @@ export const onPubSubFetchTweets = functions
     minInstances: 0,
     maxInstances: 1,
   })
-  .pubsub.schedule('1,6,11,16,21,26,31,36,41,46,51,56 * * * *')
+  .pubsub.schedule(appConfig.fetchSchedule)
   .onRun(async () => {
     await fetchTweets(adminApp);
     return 0;

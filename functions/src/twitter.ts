@@ -2,7 +2,7 @@ import TwitterApi from 'twitter-api-v2';
 import { appConfig } from './config';
 import { Tweet } from './datatypes';
 
-const token = appConfig.TwitterBearerToken;
+const token = appConfig.twitterBearerToken;
 
 const twitterClient = new TwitterApi(token).readOnly;
 

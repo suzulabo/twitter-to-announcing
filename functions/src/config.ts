@@ -8,7 +8,8 @@ export interface TweetTarget {
 }
 
 export interface AppConfig {
-  readonly TwitterBearerToken: string;
+  readonly twitterBearerToken: string;
+  readonly fetchSchedule: string;
   readonly targets: TweetTarget[];
 }
 
