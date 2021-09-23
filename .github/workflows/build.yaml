@@ -19,7 +19,7 @@ jobs:
 
       - env:
           V: ${{ secrets.CONFIG_VALUES_TS }}
-        run: echo ${V} > functions/src/config.values.ts
+        run: echo "${V}" > functions/src/config.values.ts
 
       - env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
