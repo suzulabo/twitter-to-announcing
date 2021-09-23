@@ -1,0 +1,25 @@
+{
+  "name": "twitter-to-announcing",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "eslint --ext .ts .",
+    "build:func": "npm --prefix ./functions run build",
+    "build:func:watch": "npm --prefix ./functions run build.watch",
+    "serve": "firebase emulators:start --import=./emu-data --export-on-exit",
+    "start": "run-p build:func:watch serve",
+    "shell": "firebase functions:shell",
+    "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
+    "firebase-tools": "^9.18.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  }
+}
