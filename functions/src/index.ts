@@ -10,7 +10,7 @@ adminApp.firestore().settings({ ignoreUndefinedProperties: true });
 export const posts = functions
   .runWith({
     memory: '128MB',
-    timeoutSeconds: 10,
+    timeoutSeconds: 60,
     minInstances: 0,
     maxInstances: 1,
   })
@@ -21,7 +21,7 @@ export const posts = functions
 export const onPubSubFetchTweets = functions
   .runWith({
     memory: '128MB',
-    timeoutSeconds: 30,
+    timeoutSeconds: 60,
     minInstances: 0,
     maxInstances: 1,
   })
